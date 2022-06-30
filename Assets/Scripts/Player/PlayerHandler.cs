@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum Shapes
 {
@@ -8,7 +9,7 @@ public enum Shapes
     Monkey
 }
 
-public class PlayerHandler : CharacterHandler
+public class PlayerHandler : MonoBehaviour, IDamagable
 {
     [SerializeField] protected float jaguarVelocity;
     [SerializeField] protected float monkeyVelocity;
@@ -20,12 +21,18 @@ public class PlayerHandler : CharacterHandler
     [Range(0, 0.01f)][SerializeField] protected float jaguarJumpAgility;
     [Range(0, 0.01f)][SerializeField] protected float monkeyHorizontalAgility;
 
+    [SerializeField] private int health;
+    public int Health
+    {
+        get { return health; }
+    }
+
     private PlayerShapeShift playerShapeShift;
     private PlayerMovement playerMovement;
     private Rigidbody2D playerRigibody;
     private static Shapes currentForm;
 
-    protected override void Awake()
+    private void Awake()
     {
         currentForm = Shapes.Jaguar;
         
@@ -55,6 +62,17 @@ public class PlayerHandler : CharacterHandler
         }
     }
 
+    public void ReceiveDamage(int damageAmount)
+    {
+        this.health -= damageAmount;
+        // Hiteffekt ergänzen
+
+        if (this.health <= 0)
+        {
+            Die();
+        }
+    }
+
     private void JaguarShift()
     {
         currentForm = Shapes.Jaguar;
@@ -74,5 +92,11 @@ public class PlayerHandler : CharacterHandler
         this.playerMovement.SetjumpHorizontalAgility(this.monkeyHorizontalAgility);
         this.playerMovement.SetClimbCharacter(true);
         this.playerRigibody.mass = this.monkeyMass;
+    }
+
+    private void Die()
+    {
+        //Sterbe Effekt ergänzen
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
