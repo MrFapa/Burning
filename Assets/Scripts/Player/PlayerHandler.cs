@@ -32,6 +32,8 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     private Rigidbody2D playerRigibody;
     private static Shapes currentForm;
 
+    private float lastHit;
+
     private void Awake()
     {
         currentForm = Shapes.Jaguar;
@@ -41,6 +43,8 @@ public class PlayerHandler : MonoBehaviour, IDamagable
         this.playerRigibody = this.gameObject.GetComponent<Rigidbody2D>();
 
         this.playerShapeShift.GetShapeShiftEvent().AddListener(ShapeShift);
+
+        this.lastHit = Time.time;
 
         this.JaguarShift();
     }
@@ -64,12 +68,18 @@ public class PlayerHandler : MonoBehaviour, IDamagable
 
     public void ReceiveDamage(int damageAmount)
     {
-        this.health -= damageAmount;
-        // Hiteffekt ergänzen
-
-        if (this.health <= 0)
+        if (Time.time >= this.lastHit + 1f)
         {
-            Die();
+            lastHit = Time.time;
+            this.health -= damageAmount;
+            // Hiteffekt ergänzen
+    
+            this.playerRigibody.AddForce(new Vector2(this.playerMovement.GetHorizontal() * this.playerMovement.GetJumpForce() * -10, this.playerMovement.GetJumpForce() * 2));
+
+            if (this.health <= 0)
+            {
+                Die();
+            }
         }
     }
 
