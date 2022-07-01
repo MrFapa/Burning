@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 440f37a1f3053d040995008ac940f9f7
+guid: e76a366185838cf4ebc5c6c0497f3b12
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -146423357354221995
-    second: JaguarSprite_Sheet_0
+      213: -8947627656481089999
+    second: Monkey-sheet_0
   - first:
-      213: -5577519030919515452
-    second: JaguarSprite_Sheet_1
+      213: 6874778366796916988
+    second: Monkey-sheet_1
   - first:
-      213: -429393908868122687
-    second: JaguarSprite_Sheet_2
+      213: 6909086108024868380
+    second: Monkey-sheet_2
   - first:
-      213: 7333579316760592411
-    second: JaguarSprite_Sheet_3
-  - first:
-      213: -4278525697909665980
-    second: JaguarSprite_Sheet_4
+      213: -5606247055416405541
+    second: Monkey-sheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,7 +77,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -92,7 +89,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -106,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JaguarSprite_Sheet_0
+      name: Monkey-sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,20 +111,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 3, z: 13, w: 40}
+      pivot: {x: 0, y: 0}
+      border: {x: 16, y: 3, z: 18, w: 43}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55ed4167bbcc7fdf0800000000000000
-      internalID: -146423357354221995
+      spriteID: 136dbf09d04a3d380800000000000000
+      internalID: -8947627656481089999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JaguarSprite_Sheet_1
+      name: Monkey-sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -135,20 +132,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 5, z: 11, w: 41}
+      pivot: {x: 0, y: 0}
+      border: {x: 17, y: 3, z: 17, w: 44}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c2bf0a0efba892b0800000000000000
-      internalID: -5577519030919515452
+      spriteID: cf8687e108e186f50800000000000000
+      internalID: 6874778366796916988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JaguarSprite_Sheet_2
+      name: Monkey-sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -156,20 +153,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 3, y: 3, z: 14, w: 41}
+      pivot: {x: 0, y: 0}
+      border: {x: 18, y: 3, z: 16, w: 43}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c7f231d38c7a0af0800000000000000
-      internalID: -429393908868122687
+      spriteID: c1e8867953102ef50800000000000000
+      internalID: 6909086108024868380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JaguarSprite_Sheet_3
+      name: Monkey-sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -177,14 +174,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 5, y: 3, z: 14, w: 42}
+      pivot: {x: 0, y: 0}
+      border: {x: 17, y: 3, z: 17, w: 44}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b10caab988b16c560800000000000000
-      internalID: 7333579316760592411
+      spriteID: bd153da910c9232b0800000000000000
+      internalID: -5606247055416405541
       vertices: []
       indices: 
       edges: []

@@ -34,4 +34,9 @@ public class PlayerAnimationController : MonoBehaviour
             this.animator.SetBool("isRunning", false);
         }
     }
+
+    public void setShape(int shape)
+    {
+        this.animator.SetInteger("Shape", shape);
+    }
 }
