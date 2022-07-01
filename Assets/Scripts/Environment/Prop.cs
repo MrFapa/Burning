@@ -10,7 +10,7 @@ public class Prop : MonoBehaviour, IDamagable
         get { return health; }
     }
 
-    public void ReceiveDamage(int damageAmount)
+    public void ReceiveDamage(int damageAmount, Vector3 pos)
     {
         this.health -= damageAmount;
         // Hiteffekt ergänzen

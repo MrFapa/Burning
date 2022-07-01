@@ -3197,7 +3197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154711632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3, y: -2.49, z: 0}
+  m_LocalPosition: {x: -11.18, y: -2.49, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 1760930204}
@@ -3578,7 +3578,7 @@ MonoBehaviour:
   monkeyClimbingVelocity: 4
   jaguarJumpAgility: 0.00128
   monkeyHorizontalAgility: 0.00276
-  health: 1
+  health: 3
 --- !u!1 &361648791
 GameObject:
   m_ObjectHideFlags: 0

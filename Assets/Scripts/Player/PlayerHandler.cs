@@ -18,14 +18,9 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     [SerializeField] protected float jaguarMass;
     [SerializeField] protected float monkeyMass;
     [SerializeField] protected float monkeyClimbingVelocity;
+    [SerializeField] protected GameObject[] hearths;
     [Range(0, 0.01f)][SerializeField] protected float jaguarJumpAgility;
     [Range(0, 0.01f)][SerializeField] protected float monkeyHorizontalAgility;
-
-    [SerializeField] private int health;
-    public int Health
-    {
-        get { return health; }
-    }
 
     private PlayerShapeShift playerShapeShift;
     private PlayerMovement playerMovement;
@@ -33,6 +28,13 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     private static Shapes currentForm;
 
     private float lastHit;
+
+    [SerializeField] private int health;
+    public int Health
+    {
+        get { return health; }
+    }
+
 
     private void Awake()
     {
@@ -66,15 +68,17 @@ public class PlayerHandler : MonoBehaviour, IDamagable
         }
     }
 
-    public void ReceiveDamage(int damageAmount)
+    public void ReceiveDamage(int damageAmount, Vector3 pos)
     {
         if (Time.time >= this.lastHit + 1f)
         {
             lastHit = Time.time;
             this.health -= damageAmount;
-            // Hiteffekt ergänzen
-    
-            this.playerRigibody.AddForce(new Vector2(this.playerMovement.GetHorizontal() * this.playerMovement.GetJumpForce() * -10, this.playerMovement.GetJumpForce() * 2));
+
+            int direction = (this.GetComponent<Transform>().position.x < pos.x ) ? -1 : 1;
+            this.playerRigibody.AddForce(new Vector2 (direction * 400, 400));
+
+            this.hearths[this.health].active = false;
 
             if (this.health <= 0)
             {
