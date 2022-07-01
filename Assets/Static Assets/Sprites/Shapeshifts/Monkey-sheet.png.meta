@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 63036e4d509bc1f45b6c5b0a49e97773
+guid: e76a366185838cf4ebc5c6c0497f3b12
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4332886503528856790
-    second: Download_0
+      213: -8947627656481089999
+    second: Monkey-sheet_0
   - first:
-      213: 4220164677355936161
-    second: Download_1
+      213: 6874778366796916988
+    second: Monkey-sheet_1
   - first:
-      213: -6539646928809406036
-    second: Download_2
+      213: 6909086108024868380
+    second: Monkey-sheet_2
   - first:
-      213: 692431700468107340
-    second: Download_3
-  - first:
-      213: -3541337794625498708
-    second: Download_4
-  - first:
-      213: 4998810184794079132
-    second: Download_5
-  - first:
-      213: -4781953942260031035
-    second: Download_6
-  - first:
-      213: 1263412353774731481
-    second: Download_7
+      213: -5606247055416405541
+    second: Monkey-sheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,85 +103,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Download_0
+      name: Monkey-sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 31, y: 0, z: 0, w: 46}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 16, y: 3, z: 18, w: 43}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2304118eae7ed3c0800000000000000
-      internalID: -4332886503528856790
+      spriteID: 136dbf09d04a3d380800000000000000
+      internalID: -8947627656481089999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Download_1
+      name: Monkey-sheet_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 31, y: 0, z: 3, w: 47}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 17, y: 3, z: 17, w: 44}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a993772a69019a30800000000000000
-      internalID: 4220164677355936161
+      spriteID: cf8687e108e186f50800000000000000
+      internalID: 6874778366796916988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Download_2
+      name: Monkey-sheet_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 31, y: 0, z: 3, w: 46}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 18, y: 3, z: 16, w: 43}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca157db44c18e35a0800000000000000
-      internalID: -6539646928809406036
+      spriteID: c1e8867953102ef50800000000000000
+      internalID: 6909086108024868380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Download_3
+      name: Monkey-sheet_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 31, y: 0, z: 3, w: 46}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 17, y: 3, z: 17, w: 44}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c480f9186f20c9900800000000000000
-      internalID: 692431700468107340
+      spriteID: bd153da910c9232b0800000000000000
+      internalID: -5606247055416405541
       vertices: []
       indices: 
       edges: []
