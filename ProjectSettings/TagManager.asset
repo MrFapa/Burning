@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Climbable
+  - Enemy
   layers:
   - Default
   - TransparentFX
