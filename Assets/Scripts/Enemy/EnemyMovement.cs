@@ -6,7 +6,6 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float velocity;
     [SerializeField] protected CollisionCheck checkGround0;
-    [SerializeField] protected CollisionCheck checkGround1;
 
     private float dircetion;
     private Rigidbody2D mRigidbody;
@@ -20,10 +19,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.checkGround0.CollionsWithTag("Ground") || this.checkGround1.CollionsWithTag("Ground"))
+        if (this.checkGround0.CollionsWithTag("Ground"))
         {
             this.dircetion *= -1;
         }
         mRigidbody.velocity = this.mRigidbody.velocity = new Vector2(this.dircetion * this.velocity, this.mRigidbody.velocity.y);
+        this.gameObject.transform.localScale = new Vector3(dircetion * -1, 1, 0);
     }
 }
