@@ -68,6 +68,11 @@ public abstract class CharacterMovement : MonoBehaviour
         return this.horizontalMovement;
     }
 
+    public float GetJumpForce()
+    {
+        return this.jumpForce;
+    }
+
     public bool IsGrounded()
     {
         return this.checkGround.CollionsWithTag("Ground");

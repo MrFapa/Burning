@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum Shapes
 {
@@ -8,7 +9,7 @@ public enum Shapes
     Monkey
 }
 
-public class PlayerHandler : CharacterHandler
+public class PlayerHandler : MonoBehaviour, IDamagable
 {
     [SerializeField] protected float jaguarVelocity;
     [SerializeField] protected float monkeyVelocity;
@@ -17,6 +18,7 @@ public class PlayerHandler : CharacterHandler
     [SerializeField] protected float jaguarMass;
     [SerializeField] protected float monkeyMass;
     [SerializeField] protected float monkeyClimbingVelocity;
+    [SerializeField] protected GameObject[] hearths;
     [Range(0, 0.01f)][SerializeField] protected float jaguarJumpAgility;
     [Range(0, 0.01f)][SerializeField] protected float monkeyHorizontalAgility;
 
@@ -25,7 +27,16 @@ public class PlayerHandler : CharacterHandler
     private Rigidbody2D playerRigibody;
     private static Shapes currentForm;
 
-    protected override void Awake()
+    private float lastHit;
+
+    [SerializeField] private int health;
+    public int Health
+    {
+        get { return health; }
+    }
+
+
+    private void Awake()
     {
         currentForm = Shapes.Jaguar;
         
@@ -34,6 +45,8 @@ public class PlayerHandler : CharacterHandler
         this.playerRigibody = this.gameObject.GetComponent<Rigidbody2D>();
 
         this.playerShapeShift.GetShapeShiftEvent().AddListener(ShapeShift);
+
+        this.lastHit = Time.time;
 
         this.JaguarShift();
     }
@@ -52,6 +65,25 @@ public class PlayerHandler : CharacterHandler
         else if (currentForm == Shapes.Monkey)
         {
             this.JaguarShift();
+        }
+    }
+
+    public void ReceiveDamage(int damageAmount, Vector3 pos)
+    {
+        if (Time.time >= this.lastHit + 1f)
+        {
+            lastHit = Time.time;
+            this.health -= damageAmount;
+
+            int direction = (this.GetComponent<Transform>().position.x < pos.x ) ? -1 : 1;
+            this.playerRigibody.AddForce(new Vector2 (direction * 400, 400));
+
+            this.hearths[this.health].active = false;
+
+            if (this.health <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -74,5 +106,11 @@ public class PlayerHandler : CharacterHandler
         this.playerMovement.SetjumpHorizontalAgility(this.monkeyHorizontalAgility);
         this.playerMovement.SetClimbCharacter(true);
         this.playerRigibody.mass = this.monkeyMass;
+    }
+
+    private void Die()
+    {
+        //Sterbe Effekt ergänzen
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
