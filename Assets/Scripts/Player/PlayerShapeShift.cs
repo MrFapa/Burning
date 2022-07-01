@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerShapeShift : MonoBehaviour
 {
-    private bool shape = true;
     private UnityEvent shapeShiftEvent;
 
     private void Awake()
@@ -21,14 +20,5 @@ public class PlayerShapeShift : MonoBehaviour
     public void Shift()
     {
         this.shapeShiftEvent.Invoke();
-        //this is just a placeholder for the real shape shift
-        if (shape)
-        {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-        }else
-        {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        }
-        shape = !shape;
     }
 }

@@ -24,6 +24,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
 
     private PlayerShapeShift playerShapeShift;
     private PlayerMovement playerMovement;
+    private PlayerAnimationController playerAnimation;
     private Rigidbody2D playerRigibody;
     private static Shapes currentForm;
 
@@ -43,7 +44,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
         this.playerShapeShift = this.gameObject.GetComponent<PlayerShapeShift>();
         this.playerMovement = this.gameObject.GetComponent<PlayerMovement>();
         this.playerRigibody = this.gameObject.GetComponent<Rigidbody2D>();
-
+        this.playerAnimation = this.gameObject.GetComponent<PlayerAnimationController>();
         this.playerShapeShift.GetShapeShiftEvent().AddListener(ShapeShift);
 
         this.lastHit = Time.time;
@@ -90,6 +91,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     private void JaguarShift()
     {
         currentForm = Shapes.Jaguar;
+        this.playerAnimation.setShape(0);
         this.playerMovement.SetVelocity(this.jaguarVelocity);
         this.playerMovement.SetJumpForce(this.jaguarJumpForce);
         this.playerMovement.SetjumpHorizontalAgility(this.jaguarJumpAgility);
@@ -100,6 +102,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     private void MonkeyShift()
     {
         currentForm = Shapes.Monkey;
+        this.playerAnimation.setShape(1);
         this.playerMovement.SetVelocity(this.monkeyVelocity);
         this.playerMovement.SetJumpForce(this.monkeyJumpForce);
         this.playerMovement.SetClimbVelocity(this.monkeyClimbingVelocity);

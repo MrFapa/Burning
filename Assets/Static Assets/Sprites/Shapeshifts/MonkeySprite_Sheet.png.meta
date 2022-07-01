@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: 440f37a1f3053d040995008ac940f9f7
+guid: 63036e4d509bc1f45b6c5b0a49e97773
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -146423357354221995
-    second: JaguarSprite_Sheet_0
+      213: -4332886503528856790
+    second: Download_0
   - first:
-      213: -5577519030919515452
-    second: JaguarSprite_Sheet_1
+      213: 4220164677355936161
+    second: Download_1
   - first:
-      213: -429393908868122687
-    second: JaguarSprite_Sheet_2
+      213: -6539646928809406036
+    second: Download_2
   - first:
-      213: 7333579316760592411
-    second: JaguarSprite_Sheet_3
+      213: 692431700468107340
+    second: Download_3
   - first:
-      213: -4278525697909665980
-    second: JaguarSprite_Sheet_4
+      213: -3541337794625498708
+    second: Download_4
+  - first:
+      213: 4998810184794079132
+    second: Download_5
+  - first:
+      213: -4781953942260031035
+    second: Download_6
+  - first:
+      213: 1263412353774731481
+    second: Download_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,7 +89,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -92,7 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -106,85 +115,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JaguarSprite_Sheet_0
+      name: Download_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 3, z: 13, w: 40}
+      border: {x: 31, y: 0, z: 0, w: 46}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55ed4167bbcc7fdf0800000000000000
-      internalID: -146423357354221995
+      spriteID: a2304118eae7ed3c0800000000000000
+      internalID: -4332886503528856790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JaguarSprite_Sheet_1
+      name: Download_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 5, z: 11, w: 41}
+      border: {x: 31, y: 0, z: 3, w: 47}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c2bf0a0efba892b0800000000000000
-      internalID: -5577519030919515452
+      spriteID: 1a993772a69019a30800000000000000
+      internalID: 4220164677355936161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JaguarSprite_Sheet_2
+      name: Download_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 3, y: 3, z: 14, w: 41}
+      border: {x: 31, y: 0, z: 3, w: 46}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c7f231d38c7a0af0800000000000000
-      internalID: -429393908868122687
+      spriteID: ca157db44c18e35a0800000000000000
+      internalID: -6539646928809406036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JaguarSprite_Sheet_3
+      name: Download_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
         height: 64
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 5, y: 3, z: 14, w: 42}
+      border: {x: 31, y: 0, z: 3, w: 46}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b10caab988b16c560800000000000000
-      internalID: 7333579316760592411
+      spriteID: c480f9186f20c9900800000000000000
+      internalID: 692431700468107340
       vertices: []
       indices: 
       edges: []
