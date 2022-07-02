@@ -11,8 +11,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackDuration;
     [SerializeField] private int damageAmount;
 
+    [SerializeField] private Animation attackAnimation;
+
     private List<GameObject> collisions;
     private List<GameObject> alreadyChecked;
+
+    
 
     bool attacking = false;
     float timeUntilNextAttack;
@@ -55,6 +59,8 @@ public class PlayerAttack : MonoBehaviour
             //Setzt alles notwendige auf
             this.attacking = true;
             this.attackZone.SetActive(true);
+            //this.attackAnimation.Play("jaguar_attack");
+
             this.attackZone.GetNewCollisionEvent().AddListener(this.RefreshList);
             this.collisions = this.attackZone.GetCollisions();
 
