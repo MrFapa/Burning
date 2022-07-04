@@ -79,7 +79,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
             int direction = (this.GetComponent<Transform>().position.x < pos.x ) ? -1 : 1;
             this.playerRigibody.AddForce(new Vector2 (direction * 400, 400));
 
-            this.hearths[this.health].active = false;
+            this.hearths[this.health].SetActive(false);
 
             if (this.health <= 0)
             {
