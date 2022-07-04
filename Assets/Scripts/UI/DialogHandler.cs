@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DialogHandler : MonoBehaviour
+{
+    [SerializeField] Camera cam;
+    [SerializeField] GameObject dialogFrame;
+    [SerializeField] CollisionCheck trigger;
+
+    private void Start()
+    {
+        dialogFrame.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (trigger.CollionsWithTag("Player"))
+        {
+            dialogFrame.GetComponent<RectTransform>().position = this.cam.WorldToScreenPoint(this.gameObject.GetComponent<Transform>().position);
+            dialogFrame.SetActive(true);
+        }
+        else
+        {
+            dialogFrame.SetActive(false);
+        }
+    }
+}
