@@ -49,6 +49,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
 
     private void Start()
     {
+        Time.timeScale = 1f;
         monkeyShape = true;
         jaguarShape = false;
 
@@ -59,7 +60,6 @@ public class PlayerHandler : MonoBehaviour, IDamagable
         this.playerAudioSource = this.gameObject.GetComponent<AudioSource>();
         this.playerShapeShift.GetShapeShiftEvent().AddListener(ShapeShift);
         
-        this.playerAudioSource.PlayOneShot(this.damageSound);
         this.lastHit = Time.time;
 
         this.MonkeyShift();
@@ -72,7 +72,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
 
     public void ReceiveDamage(int damageAmount, Vector3 pos, DamageType dmg)
     {
-        if (Time.time >= this.lastHit + 1f)
+        if (Time.time >= this.lastHit + 0.5f)
         {
             this.playerAudioSource.PlayOneShot(damageSound);
             lastHit = Time.time;
@@ -106,7 +106,8 @@ public class PlayerHandler : MonoBehaviour, IDamagable
 
             if (this.health <= 0)
             {
-                Die();
+                Invoke("Die", 0.01f);
+                Time.timeScale = 0.01f;
             }
         }
     }
@@ -163,7 +164,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     }
 
     private void Die()
-    {        
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
