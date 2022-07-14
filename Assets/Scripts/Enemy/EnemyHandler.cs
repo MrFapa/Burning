@@ -14,7 +14,7 @@ public class EnemyHandler : MonoBehaviour, IDamagable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<IDamagable>() != null)
+        if (collision.gameObject.GetComponent<IDamagable>() != null && collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<IDamagable>().ReceiveDamage(this.damage , this.transform.position, DamageType.ENEMY);
         }

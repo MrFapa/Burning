@@ -87,7 +87,8 @@ public class PlayerHandler : MonoBehaviour, IDamagable
                     }
                 case DamageType.GROUND:
                     {
-                        this.transform.position = pos;
+                        this.playerRigibody.velocity = new Vector3(0, 0, 0);
+                        this.transform.position = pos; 
                         break;
                     }
             }
