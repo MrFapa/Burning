@@ -16,11 +16,11 @@ public class EnemyHandler : MonoBehaviour, IDamagable
     {
         if (collision.gameObject.GetComponent<IDamagable>() != null)
         {
-            collision.gameObject.GetComponent<IDamagable>().ReceiveDamage(this.damage , this.transform.position);
+            collision.gameObject.GetComponent<IDamagable>().ReceiveDamage(this.damage , this.transform.position, DamageType.ENEMY);
         }
     }
 
-    public void ReceiveDamage(int damageAmount, Vector3 pos)
+    public void ReceiveDamage(int damageAmount, Vector3 pos, DamageType dmg)
     {
         this.health -= damageAmount;
         // Hiteffekt ergänzen

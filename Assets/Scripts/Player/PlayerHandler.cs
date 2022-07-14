@@ -42,7 +42,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     }
 
 
-    private void Awake()
+    private void Start()
     {
         monkeyShape = true;
         jaguarShape = false;
@@ -63,15 +63,35 @@ public class PlayerHandler : MonoBehaviour, IDamagable
         return currentForm;
     }
 
-    public void ReceiveDamage(int damageAmount, Vector3 pos)
+    public void ReceiveDamage(int damageAmount, Vector3 pos, DamageType dmg)
     {
         if (Time.time >= this.lastHit + 1f)
         {
             lastHit = Time.time;
             this.health -= damageAmount;
 
-            int direction = (this.GetComponent<Transform>().position.x < pos.x) ? -1 : 1;
-            this.playerRigibody.AddForce(new Vector2(direction * 400, 400));
+            
+            switch (dmg)
+            {
+                case DamageType.ENEMY:
+                    {
+                        int direction = (this.GetComponent<Transform>().position.x < pos.x) ? -1 : 1;
+                        this.playerRigibody.AddForce(new Vector2(direction * 400, 400));
+                        break;
+                    }
+                case DamageType.FALLINGOBJ:
+                    {
+                        int direction = (this.GetComponent<Transform>().position.x < pos.x) ? -1 : 1;
+                        this.playerRigibody.AddForce(new Vector2(direction * 100, -100));
+                        break;
+                    }
+                case DamageType.GROUND:
+                    {
+                        //TODO
+                        break;
+                    }
+            }
+            
 
             this.hearths[this.health].SetActive(false);
 

@@ -25,10 +25,9 @@ public class Branch : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<IDamagable>() != null)
         {
-            collision.gameObject.GetComponent<IDamagable>().ReceiveDamage(this.damage, this.transform.position);
-            GameObject.Destroy(this.gameObject);
+            collision.gameObject.GetComponent<IDamagable>().ReceiveDamage(this.damage, this.transform.position, DamageType.FALLINGOBJ);
         }
-        else if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Climbable") GameObject.Destroy(this.gameObject);
+        GameObject.Destroy(this.gameObject);
     }
 
 }
