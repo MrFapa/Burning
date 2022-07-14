@@ -81,7 +81,6 @@ GameObject:
   - component: {fileID: 921429002211153178}
   - component: {fileID: 921429002211153179}
   - component: {fileID: 921429002211153173}
-  - component: {fileID: 921429002211153172}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -170,19 +169,4 @@ MonoBehaviour:
   cam: {fileID: 0}
   dialogFrame: {fileID: 0}
   trigger: {fileID: 921429001541182882}
---- !u!114 &921429002211153172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921429002211153176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2254f5bf755d8142b66a0fe3334d992, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  trigger: {fileID: 921429001541182882}
-  jaguar: 1
-  monkey: 0
+  textOffset: {x: 0, y: 0, z: 0}
