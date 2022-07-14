@@ -9,7 +9,6 @@ public class Fire : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("test");
         if (collision.gameObject.GetComponent<IDamagable>() != null && collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<IDamagable>().ReceiveDamage(this.damage, this.respawn.transform.position, DamageType.GROUND);
