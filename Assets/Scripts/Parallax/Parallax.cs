@@ -6,15 +6,19 @@ public class Parallax : MonoBehaviour
 {
     [SerializeField] Vector2 parallaxMultiplier;
 
-    GameObject camera;
+    [SerializeField] GameObject camera;
 
     Vector3 oldCameraPos;
-    void Start()
-    {
-        this.camera = Camera.main.gameObject;
-    }
 
-    
+    float textureUnitSize;
+
+    private void Start()
+    {
+        Sprite sprite = GetComponent<SpriteRenderer>().sprite;
+        Texture2D texture = sprite.texture;
+
+        this.textureUnitSize = texture.width / sprite.pixelsPerUnit;
+    }
     void Update()
     {
         this.oldCameraPos = this.camera.transform.position;
@@ -26,5 +30,13 @@ public class Parallax : MonoBehaviour
         float yDist = this.camera.transform.position.y - this.oldCameraPos.y;
 
         this.transform.position += new Vector3(xDist * this.parallaxMultiplier.x, yDist * this.parallaxMultiplier.y, 0);
+
+
+        if(this.camera.transform.position.x - this.transform.position.x >= this.textureUnitSize)
+        {
+            float offsetPosition = (this.camera.transform.position.x - this.transform.position.x) % this.textureUnitSize;
+            this.transform.position = new Vector3(this.camera.transform.position.x + offsetPosition, this.transform.position.y);
+        }
+
     }
 }
