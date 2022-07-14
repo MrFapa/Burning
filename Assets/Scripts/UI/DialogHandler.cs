@@ -7,6 +7,7 @@ public class DialogHandler : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] GameObject dialogFrame;
     [SerializeField] CollisionCheck trigger;
+    [SerializeField] Vector3 textOffset;
 
     private void Start()
     {
@@ -17,7 +18,7 @@ public class DialogHandler : MonoBehaviour
     {
         if (trigger.CollionsWithTag("Player"))
         {
-            dialogFrame.GetComponent<RectTransform>().position = this.cam.WorldToScreenPoint(this.gameObject.GetComponent<Transform>().position);
+            dialogFrame.GetComponent<RectTransform>().position = this.cam.WorldToScreenPoint(this.gameObject.GetComponent<Transform>().position + textOffset);
             dialogFrame.SetActive(true);
         }
         else

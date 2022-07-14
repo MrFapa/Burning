@@ -419,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8591245182762813403, guid: 3183fa23b5cc07449a2a88b876f0af2f, type: 3}
       propertyPath: frequency
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3183fa23b5cc07449a2a88b876f0af2f, type: 3}
@@ -791,11 +791,11 @@ PrefabInstance:
       objectReference: {fileID: 1104594139}
     - target: {fileID: 1924045406970008851, guid: d269aad037fcf594ba35a4d1121c262b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 88.2
+      value: 8.56
       objectReference: {fileID: 0}
     - target: {fileID: 1924045406970008851, guid: d269aad037fcf594ba35a4d1121c262b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.46
+      value: 8.17
       objectReference: {fileID: 0}
     - target: {fileID: 1924045408565924982, guid: d269aad037fcf594ba35a4d1121c262b, type: 3}
       propertyPath: hearths.Array.data[0]

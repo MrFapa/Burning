@@ -10,7 +10,7 @@ public class BranchDrop : MonoBehaviour
 
     void FixedUpdate()
     {
-        if ((int) Random.Range(0, 60 * (1 - this.frequency)) == 0)
+        if ((int) Random.Range(0, 256 * (1 - this.frequency)) == 0)
         {
             GameObject tmp = Instantiate(branch);
             tmp.transform.position = new Vector2(this.transform.position.x + this.length * Random.Range(-0.5f, 0.5f), this.transform.position.y);
