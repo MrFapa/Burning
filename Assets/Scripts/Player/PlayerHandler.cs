@@ -87,7 +87,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
                     }
                 case DamageType.GROUND:
                     {
-                        //TODO
+                        this.transform.position = pos;
                         break;
                     }
             }
