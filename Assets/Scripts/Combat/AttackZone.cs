@@ -26,7 +26,7 @@ public class AttackZone : MonoBehaviour
 
         if (objectToDamage != null && !this.alreadyDamagedObjects.Contains(objectToDamage))
         {
-            objectToDamageScript.ReceiveDamage(damageAmount, this.GetComponent<Transform>().position);
+            objectToDamageScript.ReceiveDamage(damageAmount, this.GetComponent<Transform>().position, DamageType.ENEMY);
 
             this.alreadyDamagedObjects.Add(objectToDamage);
         }

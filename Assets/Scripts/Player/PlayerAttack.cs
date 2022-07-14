@@ -37,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (tmp[i].GetComponent<IDamagable>() != null && !this.alreadyChecked.Contains(tmp[i]))
                 {
-                    tmp[i].GetComponent<IDamagable>().ReceiveDamage(damageAmount, this.transform.position);
+                    tmp[i].GetComponent<IDamagable>().ReceiveDamage(damageAmount, this.transform.position, DamageType.ENEMY);
                 }
                 this.alreadyChecked.Add(tmp[i]);
             }
