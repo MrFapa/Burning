@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public enum Shapes
 {
@@ -21,6 +22,9 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     [SerializeField] protected float monkeyClimbingVelocity;
     [SerializeField] protected GameObject[] hearths;
 
+    [SerializeField] private AudioClip damageSound;
+    [SerializeField] private AudioClip gameOver;
+
     [Range(0, 0.01f)][SerializeField] protected float jaguarJumpAgility;
     [Range(0, 0.01f)][SerializeField] protected float monkeyHorizontalAgility;
 
@@ -28,6 +32,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     private PlayerMovement playerMovement;
     private PlayerAnimationController playerAnimation;
     private Rigidbody2D playerRigibody;
+    private AudioSource playerAudioSource;
     private static Shapes currentForm;
 
     private static bool monkeyShape;
@@ -51,8 +56,10 @@ public class PlayerHandler : MonoBehaviour, IDamagable
         this.playerMovement = this.gameObject.GetComponent<PlayerMovement>();
         this.playerRigibody = this.gameObject.GetComponent<Rigidbody2D>();
         this.playerAnimation = this.gameObject.GetComponent<PlayerAnimationController>();
+        this.playerAudioSource = this.gameObject.GetComponent<AudioSource>();
         this.playerShapeShift.GetShapeShiftEvent().AddListener(ShapeShift);
-
+        
+        this.playerAudioSource.PlayOneShot(this.damageSound);
         this.lastHit = Time.time;
 
         this.MonkeyShift();
@@ -67,6 +74,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     {
         if (Time.time >= this.lastHit + 1f)
         {
+            this.playerAudioSource.PlayOneShot(damageSound);
             lastHit = Time.time;
             this.health -= damageAmount;
 
@@ -155,8 +163,7 @@ public class PlayerHandler : MonoBehaviour, IDamagable
     }
 
     private void Die()
-    {
-        //Sterbe Effekt ergänzen
+    {        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
